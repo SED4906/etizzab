@@ -8,9 +8,12 @@ set -ouex pipefail
 # RPMfusion repos are available by default in ublue main images
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
-
+dnf5 config-manager -y setopt rpmfusion-free.enabled=1
+dnf5 config-manager -y setopt rpmfusion-free-updates.enabled=1
+dnf5 config-manager -y setopt rpmfusion-nonfree.enabled=1
+dnf5 config-manager -y setopt rpmfusion-nonfree-updates.enabled=1
 # this installs a package from fedora repos
-dnf5 install -y tmux kvantum
+dnf5 install -y tmux kvantum mpd
 
 # Use a COPR Example:
 #
