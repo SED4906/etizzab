@@ -2,6 +2,9 @@
 
 set -ouex pipefail
 
+# Copy Files to Container
+rsync -rvKl /ctx/system_files/shared/ /
+
 ### Install packages
 
 # Packages can be installed from any enabled yum repo on the image.
@@ -13,7 +16,7 @@ dnf5 config-manager -y setopt rpmfusion-free-updates.enabled=1
 dnf5 config-manager -y setopt rpmfusion-nonfree.enabled=1
 dnf5 config-manager -y setopt rpmfusion-nonfree-updates.enabled=1
 # this installs a package from fedora repos
-dnf5 install -y tmux kvantum mpd intel-compute-runtime
+dnf5 install -y tmux kvantum mpd intel-compute-runtime oneapi-level-zero intel-level-zero-gpu-raytracing
 
 # Use a COPR Example:
 #
