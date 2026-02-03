@@ -13,7 +13,7 @@ dnf5 config-manager -y setopt rpmfusion-free-updates.enabled=1
 dnf5 config-manager -y setopt rpmfusion-nonfree.enabled=1
 dnf5 config-manager -y setopt rpmfusion-nonfree-updates.enabled=1
 # this installs a package from fedora repos
-dnf5 install -y tmux kvantum mpd
+dnf5 install -y tmux kvantum mpd intel-compute-runtime
 
 # Use a COPR Example:
 #
