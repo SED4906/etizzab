@@ -25,8 +25,13 @@ dnf5 install -y tmux kvantum mpd intel-compute-runtime oneapi-level-zero intel-l
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable ublue-os/staging
 
+dnf5 -y copr enable tduck973564/filotimo-packages
+dnf5 install -y filotimo-atychia
+dnf5 -y copr disable tduck973564/filotimo-packages
+
 #### Example for enabling a System Unit File
 
+systemctl --global enable atychiad.service
 systemctl enable podman.socket
 
 mkdir /nix
