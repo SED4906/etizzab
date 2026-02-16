@@ -29,6 +29,11 @@ dnf5 -y copr enable tduck973564/filotimo-packages
 dnf5 install -y filotimo-atychia
 dnf5 -y copr disable tduck973564/filotimo-packages
 
+dnf5 -y copr enable sed4906/candela
+dnf5 -y install quester
+dnf5 -y copr disable sed4906/candela
+
+
 #### Example for enabling a System Unit File
 
 systemctl --global enable atychiad.service
